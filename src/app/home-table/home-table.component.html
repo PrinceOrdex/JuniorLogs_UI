@@ -1,0 +1,254 @@
+<div class="flex flex-1 flex-col md:flex-row h-screen body-color">
+  <div class="pt-4 pb-5 w-full md:w-72 bg-teal-600 md:h-screen">
+
+    <div class="fixed mx-auto">
+      <select name="cars" id="cars"
+        class="text-finance py-2 px-4 rounded-md w-full md:w-11/12 xl:w-full mx-2 relative sidebar-doprdown-bg text-white self-center">
+        <option value="Select child" selected disabled>
+          Finance and Account</option>
+      </select>
+      <span class="absolute left-3 top-2"><img src="../../assets/images/calendar.svg" alt=""></span>
+    </div>
+  </div>
+  <div class="container p-0 flex flex-col w-full overflow-x-auto right-main">
+    <div class="m-4 right-content bg-white h-content">
+      <mat-tab-group class="w-screen pb-2 ">
+        <mat-tab label=" Transaction List"> Content 1 </mat-tab>
+        <mat-tab label="Invoices"> Content 2 </mat-tab>
+        <mat-tab label="Payments"> Content 3 </mat-tab>
+        <mat-tab label="Credit Notes"> Content 4 </mat-tab>
+        <mat-tab label="Bond Payments"> Content 5 </mat-tab>
+
+        <mat-tab label="Age Debtors">
+          <div class="age-debtors mx-3 p-2 mt-3">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3 md:gap-1 rbox mt-3 mx-2 justify-between">
+              <div class="">
+                <label for="" class="mb-1">Child</label>
+                <mat-form-field appearance="fill">
+                  <!-- <mat-label>Select an child</mat-label> -->
+                  <mat-select (selectionChange)="filter1($event)" placeholder="Select child">
+                    <mat-option>None</mat-option>
+                    <mat-option value="deas">deas</mat-option>
+                    <mat-option value="des">des</mat-option>
+                    <mat-option value="deap">deap</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div class="">
+                <label for="" class="mb-1">Payee</label>
+                <mat-form-field appearance="fill">
+                  <!-- <mat-label>Select payee</mat-label> -->
+                  <mat-select (selectionChange)="filter2($event)" placeholder="Select payee">
+                    <mat-option>None</mat-option>
+                    <mat-option value="Joen">Joen</mat-option>
+                    <mat-option value="hi">hi</mat-option>
+                    <mat-option value="bruce">bruce</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div class="self-center">
+                <section class="example-section">
+                  <mat-checkbox class="example-section">
+                    <p class="text-wrap mb-0">Include those parents who are</p>
+                    <p class="">in credit</p>
+                  </mat-checkbox>
+                </section>
+              </div>
+              <div class="self-center">
+                <div class="flex flex-row">
+                  <div class="mr-2 xl:mx-auto">
+                    <button type="button" class="btn btn-search px-4">Search</button>
+                  </div>
+
+                  <div class="">
+                    <button class="box">
+                      <!-- <i class="bi bi-arrow-repeat p-3 refresh rounded-full"></i> -->
+                      <img src="../../assets/images/Refresh.svg" alt="" />
+                    </button>
+                  </div>
+
+                  <div class="ml-2 xl:mx-auto">
+                    <button (click)="changeArrow()" class="px-2 pt-2 pb-1 fefresh-btn">
+                      <mat-icon>{{ arrow }}</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3 md:gap-1 mx-2 " *ngIf="show">
+              <div class="">
+                <label for="">Start Date</label>
+                <mat-form-field class="" appearance="fill">
+                  <!-- <mat-label></mat-label> -->
+                  <input type="date" matInput value="Sushi" />
+                </mat-form-field>
+              </div>
+
+              <div class="">
+                <label for="">End date</label>
+                <mat-form-field class="" appearance="fill">
+                  <!-- <mat-label></mat-label> -->
+                  <input type="date" matInput value="Sushi" />
+                </mat-form-field>
+              </div>
+              <!-- <div class="self-center flex flex-col lg:flex-row xl:justify-around col-span-2 bg-teal-300"> -->
+              <!-- <div class="self-center grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 col-span-2 bg-teal-300"> -->
+              <div class="self-center flex flex-col lg:flex-row lg:justify-between">
+
+                <mat-checkbox class="example-margin" [(ngModel)]="accounts">Include $0 accounts
+                </mat-checkbox>
+                <mat-checkbox class="example-margin" [(ngModel)]="records">Winz records</mat-checkbox>
+                <mat-checkbox class="example-margin xl:text-center" [(ngModel)]="Month">Monthly</mat-checkbox>
+                <mat-checkbox class="example-margin mr-0 self-right" [(ngModel)]="week">Weekly</mat-checkbox>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="flex flex-col md:flex-row my-3 md:mx-2">
+            <div class="flex ml-2">
+              <mat-checkbox class="example-margin self-center"> </mat-checkbox>
+              <select name="cars" id="cars" class="rounded-lg -ml-2 mt-1 self-center">
+              </select>
+
+              <button class="tab-content-btn px-3 py-2 rounded-md mx-1">
+                <span><img src="../../assets/images/Mail.svg" alt="" class="inline" /></span>
+                <span class="ml-3 self-center">Email</span>
+              </button>
+            </div>
+            <div class="flex ml-3 md:ml-0 print-margin">
+              <button class="tab-content-btn px-3 py-2 rounded-md mx-1">
+                <span><img src="../../assets/images/Print.svg" alt="" class="inline" /></span>
+                <span class="ml-3 self-center">Print</span>
+              </button>
+              <button class="tab-content-btn px-3 py-2 rounded-md mx-1">
+                <span><img src="../../assets/images/PDF.svg" alt="" class="inline" /></span>
+                <span class="ml-3 self-center">PDF</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="mt-3">
+            <div class="mb-10 overflow-x-auto ">
+              <table mat-table [dataSource]="dataSource" matSort class="table1 m-0 p-0">
+                <ng-container matColumnDef="payee" id="row-font-color">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Payee</th>
+                  <td mat-cell *matCellDef="let row">
+                    {{ row.payee }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="child" id="row-font-color-two">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>child</th>
+                  <td mat-cell *matCellDef="let row">
+                    {{ row.child }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="threeWeek">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>3 Week</th>
+                  <td mat-cell *matCellDef="let row">
+                    {{ row.threeWeek | currency }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="twoWeek">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>2 Week</th>
+                  <td mat-cell *matCellDef="let row">
+                    {{ row.twoWeek | currency }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="OneWeek">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>1 Week</th>
+                  <td mat-cell *matCellDef="let row">
+                    {{ row.OneWeek | currency }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Current">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Current</th>
+                  <td mat-cell *matCellDef="let row">
+                    {{ row.Current | currency }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="PendingAmount">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Pending Amount
+                  </th>
+                  <td mat-cell *matCellDef="let row">
+                    {{ row.PendingAmuont | currency }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="OverPayment">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Over Payment
+                  </th>
+                  <td mat-cell *matCellDef="let row">
+                    {{ row.OverPayment | currency }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="PendingCreditNote">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Pending Credit Note
+                  </th>
+                  <td mat-cell *matCellDef="let row">
+                    {{ row.PendingCreditNote | currency }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="TotalPendingAmount">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Total Pending Amount
+                  </th>
+                  <td mat-cell *matCellDef="let row">
+                    {{ row.TotalPendingAmount | currency }}
+                  </td>
+                </ng-container>
+
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+              </table>
+              <mat-paginator [pageSizeOptions]="[10, 20, 50, 80, 100]" aria-label="Select page of users">
+              </mat-paginator>
+
+
+            </div>
+          </div>
+
+          <div class="flex flex-col lg:flex-row lg:justify-between mt-3 px-4 pb-3 x-auto">
+            <div class="flex self-center">
+              <span class="mx-2 self-center"><img src="../../assets/images/Left_Arrow.svg" alt=""></span>
+              <span class="mx-3 page-number">1</span>
+              <span class="mx-3 page-number">2</span>
+              <span class="mx-3 page-number">3</span>
+              <span class="mx-3 page-number">...</span>
+              <span class="mx-3 page-number">8</span>
+              <span class="mx-3 page-number">9</span>
+              <span class="mx-3 page-number">10</span>
+              <span class="mx-2 self-center"><img src="../../assets/images/Right_Arrow.svg" alt=""></span>
+            </div>
+            <div class="flex self-center mt-2 lg:mt-0">
+              <span class="py-2 px-3 border border-sky-500 rounded-l-lg pagination-color"><button>10</button></span>
+              <span class="py-2 px-3 border border-sky-500 pagination-color"><button>20</button></span>
+              <span class="py-2 px-3 border border-sky-500 pagination-color"><button>50</button></span>
+              <span class="py-2 px-3 border border-sky-500 pagination-color"><button>80</button></span>
+              <span class="py-2 px-3 border border-sky-500 rounded-r-lg pagination-color"><button>100</button></span>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+    <div class="fixed right-0 top-50 z-0">
+      <img src="../../assets/images/cross_icon.svg" class="cross-images ml-2 pr-0 mr-0 mb-2" alt="">
+      <img src="../../assets/images/Go_To_Top.svg" class="gotop-images ml-auto" alt="">
+    </div>
+  </div>
+</div>

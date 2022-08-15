@@ -1,0 +1,90 @@
+<div class="flex flex-1 flex-col md:flex-row py-2 main-head">
+  <div class="flex w-full md:w-72 border-r-2">
+    <div class="w-full flex mx-auto px-6">
+      <img src="../../assets/images/logo 1.png" alt="" class="head-image-width mx-auto" />
+    </div>
+  </div>
+  <div class="flex flex-col w-full overflow-x-hidden overflow-y-auto self-center">
+    <div class="flex w-full md:mx-auto md:px-4">
+      <div class="flex flex-col md:flex-row w-full h-full">
+        <div class="md:mr-auto py-3 self-center whitespace-nowrap">
+          <span class="system text-sm">System portal : </span>
+          <span class="account text-sm">Finance & Account > Account</span>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <div class="self-center mr-4 md:mr-3 lg:mr-7">
+            <img src="../../assets/images/Arrow4.svg" alt="" />
+          </div>
+          <div class="self-center mr-4 md:mr-4 lg:mr-7">
+            <img src="../../assets/images/Notification.svg" alt="" />
+          </div>
+          <div class="self-center mr-4 md:mr-4 lg:mr-7">
+            <img src="../../assets/images/Exclamation.svg" alt="" />
+          </div>
+          <div class="flex self-center align-middle">
+            <span class="self-center mr-3 md:mr-3 text-sm whitespace-nowrap">
+              John deo
+            </span>
+            <img src="../../assets/images/Avatar.png" class="" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <mat-toolbar style="background-color: #e3f2f1" class="main-head">
+  <mat-toolbar-row class="py-5"> -->
+<!-- <button mat-icon-button>
+      <img
+        src="../assets/logo 1.png"
+        style="height: 55px"
+        (click)="sidenav.toggle()"
+      />
+    </button>
+
+    <span class="example-spacer"></span>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <mat-icon style="color: black">control_camera</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      <i class="bi bi-bell-fill" style="color: black"></i>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      <i class="bi bi-exclamation-circle-fill" style="color: black"></i>
+    </button>
+    <p style="color: black; font-size: 14px">John deo</p>
+
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      <img src="../../assets/profile.jpg" alt="" width="40px" height="40px" />
+    </button> -->
+<!-- </mat-toolbar-row>
+</mat-toolbar> -->
+
+<mat-sidenav-container class="flex flex-1 flex-col md:flex-row">
+  <mat-sidenav class="sideNav pt-5w-full md:w-72 bg-teal-600 md:h-screen">
+    <mat-nav-list>
+      <a mat-list-item routerLink="bestseller">Finance and Account</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="">
+    <div class="style">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

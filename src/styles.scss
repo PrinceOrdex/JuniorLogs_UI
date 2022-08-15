@@ -1,0 +1,176 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$new1-primary: mat.define-palette(mat.$indigo-palette);
+$new1-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$new1-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$new1-theme: mat.define-light-theme((color: (primary: $new1-primary,
+        accent: $new1-accent,
+        warn: $new1-warn,
+      ),
+    ));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($new1-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+$theme-light-color: #E3F2F1;
+$theme-dark-color: #009688;
+$white-color: #ffffff;
+$refresh: #ef4444;
+$theme-secondary-color: #F6F8FB;
+$light-gray: #A8ABAE;
+
+
+html,
+body {
+  height: 100%;
+  background-color: $theme-secondary-color  !important;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.image-right-border {
+  border-right: 1px solid #acccd0;
+}
+
+.system {
+  font-weight: 700;
+  font-size: 14px !important;
+}
+
+.head-image-width {
+  max-width: 150px;
+  max-height: 67px;
+}
+
+.main-head {
+  background: $theme-light-color;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: $white-color  !important;
+  border: 1px solid gray !important;
+  border-radius: 10px !important;
+}
+
+.btn-search {
+  background-color: $theme-dark-color  !important;
+  color: $white-color;
+}
+
+.refresh {
+  background-color: $refresh  !important;
+}
+
+.age-debtors {
+  background-color: $theme-secondary-color  !important;
+  border-radius: 10px !important;
+}
+
+// ::ng-deep .mat-form-field-underline {
+//   display: none;
+// }
+
+.sidebar-doprdown-bg {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.right-content {
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06);
+  border-radius: 15px !important;
+}
+
+.right-main {
+  background: $theme-secondary-color  !important;
+  // background-color: #CACACA !important;
+  // background-color: #ef4444 !important;
+}
+
+@media only screen and (min-width:320px) and (max-width:425px) {
+  .print-margin {
+    margin-top: 10px !important;
+  }
+}
+
+@media only screen and (min-width:320px) and (max-width:1024px) {
+  .cross-images {
+    width: 23px !important;
+    height: 30px !important;
+  }
+
+  .gotop-images {
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
+
+.text-finance {
+  font-size: 12px !important;
+}
+
+.pagination-color {
+  color: $light-gray  !important;
+  font-size: 14px;
+}
+
+.pagination-color:hover {
+  color: $theme-dark-color  !important;
+  border-color: $theme-dark-color  !important;
+  background: #E3F2F1 !important;
+}
+
+.pagination-color:focus {
+  color: $theme-dark-color  !important;
+  border-color: $theme-dark-color  !important;
+  background: #E3F2F1 !important;
+}
+
+.page-number {
+  color: $light-gray  !important;
+}
+
+.page-number:hover {
+  color: $theme-dark-color  !important;
+}
+
+.body-color {
+  background: $theme-secondary-color  !important;
+}
