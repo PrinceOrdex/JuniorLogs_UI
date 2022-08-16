@@ -123,14 +123,11 @@ td {
   margin-top: 5px !important;
 }
 
-#row-font-color .mat-cell {
-  color: #5daed7;
 
+::ng-deep .mat-cell.row-font-color {
+  color: #5daed7 !important;
 }
 
-#row-font-color-two .mat-cell {
-  color: #5daed7;
-}
 
 ::ng-deep .mat-tab-body-content {
   overflow: hidden !important;
@@ -156,4 +153,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 ::ng-deep .mat-select-arrow {
   border-top: 5px solid rgb(10, 73, 99) !important;
+}
+
+::ng-deep .mat-select-panel-wrap {
+  position: relative;
+  top: 40px;
+}
+
+::ng-deep .mat-select-panel-wrap .mat-select-panel {
+  min-width: calc(100% + 20px) !important;
+  transform: translateX(4px) !important
 }
